@@ -8,9 +8,9 @@ const numberInput = document.querySelector('input');
 const btnCreate = document.querySelector('button[data-create]');
 const btnDestroy = document.querySelector('button[data-destroy]');
 const boxesContainer = document.querySelector('#boxes');
+let initialSize = 30;
 
 const createdBoxes = sum => {
-  const initialSize = 30;
   boxesContainer.innerHTML = '';
   for (let i = 0; i < sum; i++) {
     const box = document.createElement('div');
