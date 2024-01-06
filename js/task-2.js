@@ -26,15 +26,16 @@ const images = [
 ];
 
 const gallery = document.querySelector('.gallery');
-images.forEach(image => {
-  const galleryItem = document.createElement('li');
+const galleryItemsHTML = images
+  .map(
+    image => `
+  <li>
+    <img src="${image.url}" alt="${image.alt}">
+  </li>
+`,
+  )
+  .join('');
 
-  const galleryItemImg = document.createElement('img');
-  galleryItemImg.src = image.url;
-  galleryItemImg.alt = image.alt;
-
-  gallery.appendChild(galleryItem);
-  galleryItem.appendChild(galleryItemImg);
-});
+gallery.innerHTML = galleryItemsHTML;
 
 gallery.style.display = 'flex';
